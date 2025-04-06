@@ -11,7 +11,7 @@ export default function TelaColeta({ navigation }) {
     >
       <SafeAreaView style={styles.btnVoltar}>
         <Ionicons name="chevron-back" size={40} color="white" onPress={() => navigation.goBack()}/>
-        <Text style={{ fontSize: 30, left :20, color: "white" }}>Mapa de Coleta</Text>
+        <Text style={{ fontSize: 25, left :20, color: "white" }}>Mapa de Coleta</Text>
       </SafeAreaView>
 
       <View style={styles.content}>

@@ -11,7 +11,7 @@ export default function TelaDesenvoledores({ navigation }) {
     >
       <SafeAreaView style={styles.btnVoltar}>
         <Ionicons name="chevron-back" size={40} color="white" onPress={() => navigation.goBack()}/>
-        <Text style={{ fontSize: 30, left :20, color: "white" }}>Desenvolvedores</Text>
+        <Text style={{ fontSize: 25, left :20, color: "white" }}>Desenvolvedores</Text>
       </SafeAreaView>
 
       <View style={styles.content}>
