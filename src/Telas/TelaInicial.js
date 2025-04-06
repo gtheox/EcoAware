@@ -23,7 +23,7 @@ export default function TelaInicial({ navigation }) {
       <View style={styles.botoesContainer}>
         <TouchableOpacity
           style={styles.botao}
-          onPress={() => navigation.navigate('Dicas')}
+          onPress={() => navigation.navigate('TelaDicas')}
         >
           <Ionicons name="leaf-outline" size={20} color="#fff" />
           <Text style={styles.textoBotao}>Dicas Sustentáveis</Text>
@@ -31,7 +31,7 @@ export default function TelaInicial({ navigation }) {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() => navigation.navigate('Coleta')}
+          onPress={() => navigation.navigate('TelaColeta')}
         >
           <Ionicons name="location-outline" size={20} color="#fff" />
           <Text style={styles.textoBotao}>Pontos de Coleta</Text>
@@ -39,7 +39,7 @@ export default function TelaInicial({ navigation }) {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() => navigation.navigate('Formulario')}
+          onPress={() => navigation.navigate('TelaDenuncia')}
         >
           <Ionicons name="warning-outline" size={20} color="#fff" />
           <Text style={styles.textoBotao}>Denunciar</Text>
@@ -47,7 +47,7 @@ export default function TelaInicial({ navigation }) {
         
         <TouchableOpacity
             style={styles.botao}
-            onPress={() => navigation.navigate('Desenvolvedores')}
+            onPress={() => navigation.navigate('TelaDesenvolvedores')}
         >
             <Ionicons name="people-outline" size={20} color="#fff" />
             <Text style={styles.textoBotao}>Sobre os Desenvolvedores</Text>
