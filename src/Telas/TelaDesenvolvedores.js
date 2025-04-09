@@ -1,6 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, View, Linking} from 'react-native';
+import { SafeAreaView, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, View, Linking} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
     export default function TelaDesenvoledores({ navigation }) {
