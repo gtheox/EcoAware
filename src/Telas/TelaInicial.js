@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground,} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function TelaInicial({ navigation }) {
@@ -19,6 +19,8 @@ export default function TelaInicial({ navigation }) {
         Nosso aplicativo ajuda você a adotar práticas sustentáveis, localizar pontos de coleta
         e denunciar problemas ambientais com facilidade.
       </Text>
+
+      <Image source={require('../../assets/natureza.png')} style={styles.imagemDecorativa} />
 
       <View style={styles.botoesContainer}>
         <TouchableOpacity
@@ -44,15 +46,14 @@ export default function TelaInicial({ navigation }) {
           <Ionicons name="warning-outline" size={20} color="#fff" />
           <Text style={styles.textoBotao}>Denunciar</Text>
         </TouchableOpacity>
-        
-        <TouchableOpacity
-            style={styles.botao}
-            onPress={() => navigation.navigate('TelaDesenvolvedores')}
-        >
-            <Ionicons name="people-outline" size={20} color="#fff" />
-            <Text style={styles.textoBotao}>Sobre os Desenvolvedores</Text>
-        </TouchableOpacity>
 
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => navigation.navigate('TelaDesenvolvedores')}
+        >
+          <Ionicons name="people-outline" size={20} color="#fff" />
+          <Text style={styles.textoBotao}>Sobre os Desenvolvedores</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: 'center',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   logo: {
     width: 120,
@@ -88,8 +89,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
     textAlign: 'center',
-    marginBottom: 30,
+    marginBottom: 15,
     paddingHorizontal: 10,
+  },
+  imagemDecorativa: {
+    width: 250,
+    height: 130,
+    resizeMode: 'contain',
+    marginBottom: 20,
   },
   botoesContainer: {
     width: '100%',
