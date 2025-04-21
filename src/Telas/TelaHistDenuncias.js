@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, Text, StyleSheet, ImageBackground, View, ScrollView } from 'react-native';
+import { SafeAreaView, Text, StyleSheet, ImageBackground, View, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -22,6 +22,17 @@ export default function TelaHistDenuncias({ navigation }) {
     return unsubscribe;
   }, [navigation]);
 
+  const deletarDenuncia = async (index) => {
+    try {
+      const novasDenuncias = [...denuncias];
+      novasDenuncias.splice(index, 1);
+      setDenuncias(novasDenuncias);
+      await AsyncStorage.setItem('DENUNCIAS', JSON.stringify(novasDenuncias));
+    } catch (error) {
+      console.error('Erro ao deletar denúncia:', error);
+    }
+  };
+
   return (
     <ImageBackground
       source={require('../../assets/BG.png')}
@@ -39,7 +50,12 @@ export default function TelaHistDenuncias({ navigation }) {
         ) : (
           denuncias.map((item, index) => (
             <View key={index} style={styles.card}>
-              <Text style={styles.item}><Text style={styles.bold}>Nome:</Text> {item.nome}</Text>
+              <View style={styles.headerCard}>
+                <Text style={styles.item}><Text style={styles.bold}>Nome:</Text> {item.nome}</Text>
+                <TouchableOpacity onPress={() => deletarDenuncia(index)}>
+                  <Ionicons name="trash" size={24} color="red" />
+                </TouchableOpacity>
+              </View>
               <Text style={styles.item}><Text style={styles.bold}>CEP:</Text> {item.cep}</Text>
               <Text style={styles.item}><Text style={styles.bold}>Estado:</Text> {item.estado}</Text>
               <Text style={styles.item}><Text style={styles.bold}>Cidade:</Text> {item.cidade}</Text>
@@ -75,6 +91,12 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     marginBottom: 20,
+  },
+  headerCard: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
   },
   item: {
     fontSize: 16,

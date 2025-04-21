@@ -16,8 +16,7 @@ export default function TelaInicial({ navigation }) {
       </View>
 
       <Text style={styles.descricao}>
-        Nosso aplicativo ajuda você a adotar práticas sustentáveis, localizar pontos de coleta
-        e denunciar problemas ambientais com facilidade.
+        Nosso aplicativo ajuda você a adotar práticas sustentáveis e denunciar problemas ambientais com facilidade.
       </Text>
 
       <Image source={require('../../assets/natureza.png')} style={styles.imagemDecorativa} />
@@ -29,14 +28,6 @@ export default function TelaInicial({ navigation }) {
         >
           <Ionicons name="leaf-outline" size={20} color="#fff" />
           <Text style={styles.textoBotao}>Dicas Sustentáveis</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.botao}
-          onPress={() => navigation.navigate('TelaColeta')}
-        >
-          <Ionicons name="location-outline" size={20} color="#fff" />
-          <Text style={styles.textoBotao}>Pontos de Coleta</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
